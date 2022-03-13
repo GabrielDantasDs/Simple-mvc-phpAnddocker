@@ -1,6 +1,6 @@
 <?php
 
-use core\Controller;
+use Core\Controller;
 
 class Pessoa extends Controller
 {
@@ -8,15 +8,16 @@ class Pessoa extends Controller
   * chama a view index.php do  /Pessoa   ou somente   /
   */
   public function index()
-  { 
+  {
     $pessoas = $this->model('Pessoa');  
     if(isset($_POST['submitbtn']) && $_POST['randcheck']==$_SESSION['rand'])
     {
+        printf($_POST['endereco']);
         $create = $this->create($_POST, $pessoas);
     } 
     $data['pessoas'] = $pessoas::findAll();;
     $data['create'] = $create;
-    $this->view('pessoa/index',$data);
+    $this->view('Pessoa/index',$data);
   }
 
   public function create($request, $pessoas) {

@@ -1,3 +1,6 @@
+<?php session_start();
+$_SESSION['teste'] = 'teste';
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
   <head>

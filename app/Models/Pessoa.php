@@ -2,7 +2,7 @@
 
 namespace models;
 
-use core\Database;
+use Core\Database;
 use Exception;
 use PDO;
 class Pessoa

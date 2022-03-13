@@ -1,8 +1,6 @@
 <?php
 
-namespace core;
-
-use models\Users;
+namespace Core;
 
 /**
 * Esta classe é responsável por instanciar um model e chamar a view correta
@@ -18,7 +16,9 @@ class Controller
   */
   public function model($model)
   {
-    require './models/' . $model . '.php';
+    set_include_path('/home/gabrieldantas/Documentos/ProcessoSeletivo/System/simple-framework-mvc-php/app/');
+
+    require 'Models/' . $model . '.php';
     $classe = '\\models\\' . $model;
     return new $classe();
 
