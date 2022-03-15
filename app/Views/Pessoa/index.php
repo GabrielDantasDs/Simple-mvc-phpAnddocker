@@ -72,25 +72,19 @@
         </thead>
 
         <tbody>
-            <tr>
-                <th scope="row">1</th>
-                <?php
-                    foreach ($data['pessoas'] as $pessoa ) {
-                        echo '<td>'. $pessoa->nome .'</td>';
-                    }
-                ?>
-            </tr>
-            <tr>
-                <th scope="row">2</th>
-                <td>Jacob</td>
-                <td>Thornton</td>
-                <td>@fat</td>
-            </tr>
-            <tr>
-                <th scope="row">3</th>
-                <td colspan="2">Larry the Bird</td>
-                <td>@twitter</td>
-            </tr>
+        <?php
+            foreach ($data['pessoas'] as $pessoa ) {
+                echo
+                '<tr>
+                <th scope="row">'.$pessoa->id.'</th>
+                <td>'. $pessoa->nome .'</td>
+                <td>'. $pessoa->cpf . '</td>
+                <td>'. utf8_encode($pessoa->endereco) . '</td>
+                <td>  <button> Editar </button> </td>
+                <td>  <button> Remover </button> </td>
+                </tr>';              
+            }
+        ?>
         </tbody>
     </table>
   </body>
